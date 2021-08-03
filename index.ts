@@ -1389,8 +1389,25 @@ const data = [
   }
 ]
 
+// x 50 - 1150
+// y 130 - 630
+
+const getRandomInt = (min: number, max: number) : number  => {
+  return Math.ceil(Math.random() * (max - min) + min);
+}
+
+const trueArray = [];
+for (let i = 0; i < data.length; i += 1) {
+  const obj = data[i];
+  obj.location.lat = getRandomInt(50, 1150);
+  obj.location.lng = getRandomInt(130, 630);
+  trueArray.push(obj);
+}
+
+
+
 addEventListener("fetch", (event) => {
-	const response = new Response("hi!", {
+	const response = new Response(JSON.stringify(trueArrays), {
 		headers: {
 			"content-type": "application/json; charset=UTF-8",
 		},
