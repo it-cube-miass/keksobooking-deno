@@ -1396,18 +1396,15 @@ const getRandomInt = (min: number, max: number) => {
   return Math.ceil(Math.random() * (max - min) + min);
 }
 
-const trueArray = [];
-for (let i = 0; i < data.length; i += 1) {
-  const obj = data[i];
-  obj.location.lat = getRandomInt(50, 1150);
-  obj.location.lng = getRandomInt(130, 630);
-  trueArray.push(obj);
-}
+data.forEach(it => {
+  it.location.lat = getRandomInt(50, 1150)
+  it.location.lng = getRandomInt(130, 630)
+})
 
 
 
 addEventListener("fetch", (event) => {
-	const response = new Response(JSON.stringify(trueArrays), {
+	const response = new Response(JSON.stringify(data), {
 		headers: {
 			"content-type": "application/json; charset=UTF-8",
 		},
