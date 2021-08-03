@@ -1390,7 +1390,7 @@ const data = [
 ]
 
 addEventListener("fetch", (event) => {
-	const response = new Response(JSON.stringify(data), {
+	const response = new Response("hi!", {
 		headers: {
 			"content-type": "application/json; charset=UTF-8",
 		},
