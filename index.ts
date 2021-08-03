@@ -1392,7 +1392,7 @@ const data = [
 // x 50 - 1150
 // y 130 - 630
 
-const getRandomInt = (min: number, max: number) : number  => {
+const getRandomInt = (min: number, max: number) => {
   return Math.ceil(Math.random() * (max - min) + min);
 }
 
